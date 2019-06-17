@@ -1,5 +1,5 @@
 # Jiagu自然语言处理工具
->>> Jiagu以BiLSTM等模型为基础，使用大规模语料训练而成。将提供中文分词、词性标注、命名实体识别、关键词抽取、文本摘要、新词发现等常用自然语言处理功能。参考了各大工具优缺点制作，将Jiagu回馈给大家。
+>>> Jiagu以BiLSTM等模型为基础，使用大规模语料训练而成。将提供中文分词、词性标注、命名实体识别、情感分析、知识图谱关系抽取、关键词抽取、文本摘要、新词发现等常用自然语言处理功能。参考了各大工具优缺点制作，将Jiagu回馈给大家。
 
 ## 目录
 * [安装方式](#安装方式)
@@ -14,6 +14,7 @@
 * 词性标注
 * 命名实体识别
 * 情感分析     (模型训练中)
+* 知识图谱关系抽取
 * 关键词提取
 * 文本摘要
 * 新词发现
@@ -86,7 +87,16 @@ words = jiagu.seg('结婚的和尚未结婚的')
 print(words)
 ```
 
-3. 关键词提取
+3. 知识图谱关系抽取
+```python3
+import jiagu
+
+text = '姚明（Yao Ming），1980年9月12日出生于上海市徐汇区，祖籍江苏省苏州市吴江区震泽镇，前中国职业篮球运动员，司职中锋，现任中职联公司董事长兼总经理。'
+knowledge = jiagu.knowledge(text)
+print(knowledge)
+```
+
+4. 关键词提取
 ```python3
 import jiagu
 
@@ -102,7 +112,7 @@ keywords = jiagu.keywords(text, 5) # 关键词
 print(keywords)
 ```
 
-4. 文本摘要
+5. 文本摘要
 ```python3
 fin = open('input.txt', 'r')
 text = fin.read()
@@ -112,7 +122,7 @@ summarize = jiagu.summarize(text, 3) # 摘要
 print(summarize)
 ```
 
-5. 新词发现
+6. 新词发现
 ```python3
 import jiagu
 
@@ -184,5 +194,6 @@ B-ORG、I-ORG   机构名
 1. [Yener](https://github.com/ownthink)
 2. [zengbin93](https://github.com/zengbin93)
 3. [dirtdust](https://github.com/dirtdust)
+4. [frankchen7788](https://github.com/frankchen7788)
 
 
